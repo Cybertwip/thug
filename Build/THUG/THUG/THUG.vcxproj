@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Code\Core\compress.h" />
+    <ClInclude Include="..\..\..\Code\Core\crc.h" />
+    <ClInclude Include="..\..\..\Code\Core\Debug.h" />
+    <ClInclude Include="..\..\..\Code\Core\Debug\Checks.h" />
+    <ClInclude Include="..\..\..\Code\Core\Debug\Mem_stat.h" />
+    <ClInclude Include="..\..\..\Code\Core\Debug\Messages.h" />
+    <ClInclude Include="..\..\..\Code\Core\Debug\Module.h" />
+    <ClInclude Include="..\..\..\Code\Core\Debug\Project.h" />
+    <ClInclude Include="..\..\..\Code\Core\Debug\Signatrs.h" />
+    <ClInclude Include="..\..\..\Code\Core\Defines.h" />
+    <ClInclude Include="..\..\..\Code\Core\DynamicTable.h" />
+    <ClInclude Include="..\..\..\Code\Core\flags.h" />
+    <ClInclude Include="..\..\..\Code\Core\glue.h" />
+    <ClInclude Include="..\..\..\Code\Core\HashTable.h" />
+    <ClInclude Include="..\..\..\Code\Core\List.h" />
+    <ClInclude Include="..\..\..\Code\Core\List\Head.h" />
+    <ClInclude Include="..\..\..\Code\Core\List\Node.h" />
+    <ClInclude Include="..\..\..\Code\Core\List\Search.h" />
+    <ClInclude Include="..\..\..\Code\Core\log.h" />
+    <ClInclude Include="..\..\..\Code\Core\LookupTable.h" />
+    <ClInclude Include="..\..\..\Code\Core\macros.h" />
+    <ClInclude Include="..\..\..\Code\Core\math.h" />
+    <ClInclude Include="..\..\..\Code\Core\Math\geometry.h" />
+    <ClInclude Include="..\..\..\Code\Core\Math\math.h" />
+    <ClInclude Include="..\..\..\Code\Core\Math\matrix.h" />
+    <ClInclude Include="..\..\..\Code\Core\Math\quat.h" />
+    <ClInclude Include="..\..\..\Code\Core\Math\rect.h" />
+    <ClInclude Include="..\..\..\Code\Core\Math\rot90.h" />
+    <ClInclude Include="..\..\..\Code\Core\Math\slerp.h" />
+    <ClInclude Include="..\..\..\Code\Core\Math\vector.h" />
+    <ClInclude Include="..\..\..\Code\Core\Math\Xbox\sse.h" />
+    <ClInclude Include="..\..\..\Code\Core\singleton.h" />
+    <ClInclude Include="..\..\..\Code\Core\StringHashTable.h" />
+    <ClInclude Include="..\..\..\Code\Core\String\CString.h" />
+    <ClInclude Include="..\..\..\Code\Core\String\stringutils.h" />
+    <ClInclude Include="..\..\..\Code\Core\support.h" />
+    <ClInclude Include="..\..\..\Code\Core\Support\class.h" />
+    <ClInclude Include="..\..\..\Code\Core\Support\Lock.h" />
+    <ClInclude Include="..\..\..\Code\Core\Support\Ref.h" />
+    <ClInclude Include="..\..\..\Code\Core\Support\support.h" />
+    <ClInclude Include="..\..\..\Code\Core\Task.h" />
+    <ClInclude Include="..\..\..\Code\Core\Task\Hook.h" />
+    <ClInclude Include="..\..\..\Code\Core\Task\List.h" />
+    <ClInclude Include="..\..\..\Code\Core\Task\Stack.h" />
+    <ClInclude Include="..\..\..\Code\Core\Task\Task.h" />
+    <ClInclude Include="..\..\..\Code\Core\thread.h" />
+    <ClInclude Include="..\..\..\Code\Core\Thread\wn32\t_thread.h" />
+    <ClInclude Include="..\..\..\Code\Core\TimestampedFlag.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\2D\BlurEffect.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\2D\Element3d.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\2D\Menu2.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\2D\ScreenElement2.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\2D\ScreenElemMan.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\2D\ScrollingMenu.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\2D\SpriteElement.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\2D\TextElement.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\2D\Window.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\AnimController.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\baseanimcontroller.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\bbox.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\blendchannel.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\BonedAnim.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\BonedAnimTypes.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\camera.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\CasUtils.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\CustomAnimKey.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\debuggfx.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\FaceMassage.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\FaceTexture.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\gfxman.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\gfxutils.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\Image\ImageBasic.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\ModelAppearance.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\ModelBuilder.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\nx.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxAnimCache.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\nxflags.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxFont.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxFontMan.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxGeom.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxHierarchy.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxImposter.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxLight.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxLightMan.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxLoadScreen.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxMesh.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxMiscFX.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxModel.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxNewParticle.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxNewParticleMgr.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\nxparticle.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\nxparticlemgr.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxQuickAnim.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxScene.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxSector.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxSkinComponent.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxSprite.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxTexMan.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxTexture.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxTextured3dPoly.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxViewMan.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxViewport.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\nxweather.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\NxWin2D.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\Pose.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\shadow.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\Skeleton.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\stdafx.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\subanimcontroller.h" />
+    <ClInclude Include="..\..\..\Code\Gfx\vecfont.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\car.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\crown.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\cutscenedetails.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\emitter.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\FollowOb.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\GameObj.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\gap.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\manual.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\moviecam.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\moviedetails.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\MovingObject.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\navigation.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\objecthook.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\PathMan.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\PathOb.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\ped.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\PlayerProfileManager.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\proxim.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\rail.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\records.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\restart.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\skater.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\SkaterButton.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\skatercam.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\skatercareer.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\skaterflags.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\SkaterPad.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\SkaterProfile.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\SkaterTricks.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\TrickObject.h" />
+    <ClInclude Include="..\..\..\Code\Sk\Objects\ViewerObj.h" />
+    <ClInclude Include="..\..\..\Code\Sys\Config\config.h" />
+    <ClInclude Include="..\..\..\Code\Sys\Mem\alloc.h" />
+    <ClInclude Include="..\..\..\Code\Sys\Mem\CompactPool.h" />
+    <ClInclude Include="..\..\..\Code\Sys\Mem\handle.h" />
+    <ClInclude Include="..\..\..\Code\Sys\Mem\heap.h" />
+    <ClInclude Include="..\..\..\Code\Sys\Mem\memdbg.h" />
+    <ClInclude Include="..\..\..\Code\Sys\Mem\memman.h" />
+    <ClInclude Include="..\..\..\Code\Sys\Mem\memptr.h" />
+    <ClInclude Include="..\..\..\Code\Sys\Mem\memtest.h" />
+    <ClInclude Include="..\..\..\Code\Sys\Mem\pile.h" />
+    <ClInclude Include="..\..\..\Code\Sys\Mem\pool.h" />
+    <ClInclude Include="..\..\..\Code\Sys\Mem\Poolable.h" />
+    <ClInclude Include="..\..\..\Code\Sys\Mem\PoolManager.h" />
+    <ClInclude Include="..\..\..\Code\Sys\Mem\region.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Code\Core\compress.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\crc.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\Debug\Assert.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\Debug\Debug.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\Debug\log.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\Debug\Wn32\P_debug.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\DynamicTable.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\List\list.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\LookupTable.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\Math\geometry.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\Math\math.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\Math\matrix.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\Math\rot90.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\Math\slerp.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\Math\vector.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\String\CString.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\String\stringutils.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\Support\class.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\Task\Task.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\Task\Tlist.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\Task\Tstack.cpp" />
+    <ClCompile Include="..\..\..\Code\Core\Thread\wn32\t_thread.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\2D\BlurEffect.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\2D\Element3d.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\2D\Menu2.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\2D\ScreenElement2.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\2D\ScreenElemMan.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\2D\ScrollingMenu.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\2D\SpriteElement.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\2D\TextElement.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\2D\Window.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\AnimController.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\baseanimcontroller.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\bbox.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\blendchannel.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\BonedAnim.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\camera.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\CasUtils.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\CustomAnimKey.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\debuggfx.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\FaceMassage.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\FaceTexture.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\gfxman.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\gfxutils.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\ModelAppearance.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\ModelBuilder.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\nx.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxAnimCache.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxFont.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxFontMan.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxGeom.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxImposter.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxLight.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxLightMan.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxLoadScreen.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxMesh.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxMiscFX.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxModel.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxNewParticle.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxNewParticleMgr.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\nxparticle.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\nxparticlemgr.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxQuickAnim.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxScene.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxSector.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxSkinComponent.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxSprite.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxTexMan.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxTexture.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxTextured3dPoly.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxViewMan.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxViewport.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\nxweather.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\NxWin2D.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\shadow.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\Skeleton.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\subanimcontroller.cpp" />
+    <ClCompile Include="..\..\..\Code\Gfx\vecfont.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\car.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\crown.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\cutscenedetails.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\emitter.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\followob.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\GameObj.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\gap.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\manual.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\moviecam.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\moviedetails.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\MovingObject.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\navigation.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\objecthook.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\PathMan.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\PathOb.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\ped.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\PlayerProfileManager.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\proxim.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\rail.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\records.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\restart.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\skater.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\SkaterButton.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\skatercam.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\skatercareer.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\skaterpad.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\SkaterProfile.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\SkaterTricks.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\TrickObject.cpp" />
+    <ClCompile Include="..\..\..\Code\Sk\Objects\ViewerObj.cpp" />
+    <ClCompile Include="..\..\..\Code\Sys\Config\config.cpp" />
+    <ClCompile Include="..\..\..\Code\Sys\Config\Win32\p_config.cpp" />
+    <ClCompile Include="..\..\..\Code\Sys\Mem\alloc.cpp" />
+    <ClCompile Include="..\..\..\Code\Sys\Mem\CompactPool.cpp" />
+    <ClCompile Include="..\..\..\Code\Sys\Mem\heap.cpp" />
+    <ClCompile Include="..\..\..\Code\Sys\Mem\memman.cpp" />
+    <ClCompile Include="..\..\..\Code\Sys\Mem\memtest.cpp" />
+    <ClCompile Include="..\..\..\Code\Sys\Mem\pile.cpp" />
+    <ClCompile Include="..\..\..\Code\Sys\Mem\pool.cpp" />
+    <ClCompile Include="..\..\..\Code\Sys\Mem\Poolable.cpp" />
+    <ClCompile Include="..\..\..\Code\Sys\Mem\PoolManager.cpp" />
+    <ClCompile Include="..\..\..\Code\Sys\Mem\region.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Code\Core\Math\matrix.inl" />
+    <None Include="..\..\..\Code\Core\Math\quat.inl" />
+    <None Include="..\..\..\Code\Core\Math\vector.inl" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{CF815D3C-F294-424A-84E1-87299E6EECDF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>THUG</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);C:\Binaries\mssdk\include</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSDK_LibraryPath_x86);C:\Binaries\mssdk\lib</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;__PLAT_XBOX__;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\Code;(SolutionDir)\..\..\Code\Sk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <AdditionalOptions> /permissive %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d8.lib;d3dx8.lib;ddraw.lib;dinput8.lib;dxerr8.lib;dsound.lib;dxguid.lib;dxtrans.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

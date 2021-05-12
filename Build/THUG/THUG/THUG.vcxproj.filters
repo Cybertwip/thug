@@ -1,0 +1,917 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{6536fd73-4f7a-42d6-b474-84fb92d40a14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Thread">
+      <UniqueIdentifier>{2e51c440-a168-4cd1-8396-89dd1f0f299c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Thread\wn32">
+      <UniqueIdentifier>{f54e84c7-e683-4302-a6b8-446fc0d34c22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Task">
+      <UniqueIdentifier>{5d6bfc00-dd09-4c51-a6c4-56fc707c8e18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Support">
+      <UniqueIdentifier>{bf7cdb5e-76c5-42cb-9776-e2896d3309f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\String">
+      <UniqueIdentifier>{1ffe8d9a-686d-43f4-b461-35ed38e39641}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Math">
+      <UniqueIdentifier>{fdf948d8-e6c3-4613-8d86-797fc29ea9bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\List">
+      <UniqueIdentifier>{39e3483e-5ea4-448b-adbc-589889367c9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Debug">
+      <UniqueIdentifier>{f2d732a7-e69d-4b47-8e74-3598e781ae5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Debug\Wn32">
+      <UniqueIdentifier>{30e8d594-447b-4e19-8b27-50b1f0933178}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sys">
+      <UniqueIdentifier>{4c6c4ce6-379f-4574-ac77-0d7607a45fa8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sys\Mem">
+      <UniqueIdentifier>{56fe65e7-3479-440f-9ce9-cd1ee8b972be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sys\Config">
+      <UniqueIdentifier>{98a4c804-5873-44e2-9af7-0523c8e7a27c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sys\Config\Win32">
+      <UniqueIdentifier>{b2a96db6-5526-4d0f-8b25-0f681659c348}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sys\File">
+      <UniqueIdentifier>{11662845-a209-44d9-85d8-49b90f780dd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Gfx">
+      <UniqueIdentifier>{ec06f0f9-ad0f-4e17-964a-8a498ecf38f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Gfx\Image">
+      <UniqueIdentifier>{66e2ad31-b756-47cb-9440-777fed4381f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Gfx\2D">
+      <UniqueIdentifier>{99d24b51-274d-442f-9473-812b88b1d2d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sk">
+      <UniqueIdentifier>{4104fc20-5bf9-468e-a51f-3299837ee94d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sk\Objects">
+      <UniqueIdentifier>{205bd713-2be7-4fe3-9899-cb0512b2bfdf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Code\Core\HashTable.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\List.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\log.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\LookupTable.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\macros.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\math.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\singleton.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\StringHashTable.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\support.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Task.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\thread.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\TimestampedFlag.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\compress.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\crc.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Debug.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Defines.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\DynamicTable.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\flags.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\glue.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Thread\wn32\t_thread.h">
+      <Filter>Source Files\Core\Thread\wn32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Task\Hook.h">
+      <Filter>Source Files\Core\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Task\List.h">
+      <Filter>Source Files\Core\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Task\Stack.h">
+      <Filter>Source Files\Core\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Task\Task.h">
+      <Filter>Source Files\Core\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Support\class.h">
+      <Filter>Source Files\Core\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Support\Lock.h">
+      <Filter>Source Files\Core\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Support\Ref.h">
+      <Filter>Source Files\Core\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Support\support.h">
+      <Filter>Source Files\Core\Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\String\CString.h">
+      <Filter>Source Files\Core\String</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\String\stringutils.h">
+      <Filter>Source Files\Core\String</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Math\geometry.h">
+      <Filter>Source Files\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Math\math.h">
+      <Filter>Source Files\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Math\matrix.h">
+      <Filter>Source Files\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Math\quat.h">
+      <Filter>Source Files\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Math\rect.h">
+      <Filter>Source Files\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Math\rot90.h">
+      <Filter>Source Files\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Math\slerp.h">
+      <Filter>Source Files\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Math\vector.h">
+      <Filter>Source Files\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Math\Xbox\sse.h">
+      <Filter>Source Files\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\List\Head.h">
+      <Filter>Source Files\Core\List</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\List\Node.h">
+      <Filter>Source Files\Core\List</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\List\Search.h">
+      <Filter>Source Files\Core\List</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Debug\Checks.h">
+      <Filter>Source Files\Core\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Debug\Mem_stat.h">
+      <Filter>Source Files\Core\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Debug\Messages.h">
+      <Filter>Source Files\Core\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Debug\Module.h">
+      <Filter>Source Files\Core\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Debug\Project.h">
+      <Filter>Source Files\Core\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Core\Debug\Signatrs.h">
+      <Filter>Source Files\Core\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sys\Mem\alloc.h">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sys\Mem\CompactPool.h">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sys\Mem\handle.h">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sys\Mem\heap.h">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sys\Mem\memdbg.h">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sys\Mem\memman.h">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sys\Mem\memptr.h">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sys\Mem\memtest.h">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sys\Mem\pile.h">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sys\Mem\pool.h">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sys\Mem\Poolable.h">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sys\Mem\PoolManager.h">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sys\Mem\region.h">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sys\Config\config.h">
+      <Filter>Source Files\Sys\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxWin2D.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\Pose.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\shadow.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\Skeleton.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\stdafx.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\subanimcontroller.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\vecfont.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\AnimController.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\baseanimcontroller.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\bbox.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\blendchannel.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\BonedAnim.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\BonedAnimTypes.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\camera.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\CasUtils.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\CustomAnimKey.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\debuggfx.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\FaceMassage.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\FaceTexture.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\gfxman.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\gfxutils.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\ModelAppearance.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\ModelBuilder.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\nx.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxAnimCache.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\nxflags.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxFont.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxFontMan.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxGeom.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxHierarchy.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxImposter.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxLight.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxLightMan.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxLoadScreen.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxMesh.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxMiscFX.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxModel.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxNewParticle.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxNewParticleMgr.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\nxparticle.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\nxparticlemgr.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxQuickAnim.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxScene.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxSector.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxSkinComponent.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxSprite.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxTexMan.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxTexture.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxTextured3dPoly.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxViewMan.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\NxViewport.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\nxweather.h">
+      <Filter>Source Files\Gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\Image\ImageBasic.h">
+      <Filter>Source Files\Gfx\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\2D\BlurEffect.h">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\2D\Element3d.h">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\2D\Menu2.h">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\2D\ScreenElement2.h">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\2D\ScreenElemMan.h">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\2D\ScrollingMenu.h">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\2D\SpriteElement.h">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\2D\TextElement.h">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Gfx\2D\Window.h">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\car.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\crown.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\cutscenedetails.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\emitter.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\FollowOb.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\GameObj.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\gap.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\manual.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\moviecam.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\moviedetails.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\MovingObject.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\navigation.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\objecthook.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\PathMan.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\PathOb.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\ped.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\PlayerProfileManager.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\proxim.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\rail.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\records.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\restart.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\skater.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\SkaterButton.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\skatercam.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\skatercareer.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\skaterflags.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\SkaterPad.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\SkaterProfile.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\SkaterTricks.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\TrickObject.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Sk\Objects\ViewerObj.h">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Code\Core\LookupTable.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\compress.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\crc.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\DynamicTable.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\Thread\wn32\t_thread.cpp">
+      <Filter>Source Files\Core\Thread\wn32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\Task\Task.cpp">
+      <Filter>Source Files\Core\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\Task\Tlist.cpp">
+      <Filter>Source Files\Core\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\Task\Tstack.cpp">
+      <Filter>Source Files\Core\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\Support\class.cpp">
+      <Filter>Source Files\Core\Support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\String\CString.cpp">
+      <Filter>Source Files\Core\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\String\stringutils.cpp">
+      <Filter>Source Files\Core\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\Math\geometry.cpp">
+      <Filter>Source Files\Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\Math\math.cpp">
+      <Filter>Source Files\Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\Math\matrix.cpp">
+      <Filter>Source Files\Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\Math\rot90.cpp">
+      <Filter>Source Files\Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\Math\slerp.cpp">
+      <Filter>Source Files\Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\Math\vector.cpp">
+      <Filter>Source Files\Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\List\list.cpp">
+      <Filter>Source Files\Core\List</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\Debug\Assert.cpp">
+      <Filter>Source Files\Core\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\Debug\Debug.cpp">
+      <Filter>Source Files\Core\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\Debug\log.cpp">
+      <Filter>Source Files\Core\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Core\Debug\Wn32\P_debug.cpp">
+      <Filter>Source Files\Core\Debug\Wn32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sys\Mem\alloc.cpp">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sys\Mem\CompactPool.cpp">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sys\Mem\heap.cpp">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sys\Mem\memman.cpp">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sys\Mem\memtest.cpp">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sys\Mem\pile.cpp">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sys\Mem\pool.cpp">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sys\Mem\Poolable.cpp">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sys\Mem\PoolManager.cpp">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sys\Mem\region.cpp">
+      <Filter>Source Files\Sys\Mem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sys\Config\Win32\p_config.cpp">
+      <Filter>Source Files\Sys\Config\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sys\Config\config.cpp">
+      <Filter>Source Files\Sys\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxWin2D.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\shadow.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\Skeleton.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\subanimcontroller.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\vecfont.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\AnimController.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\baseanimcontroller.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\bbox.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\blendchannel.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\BonedAnim.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\camera.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\CasUtils.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\CustomAnimKey.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\debuggfx.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\FaceMassage.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\FaceTexture.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\gfxman.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\gfxutils.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\ModelAppearance.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\ModelBuilder.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\nx.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxAnimCache.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxFont.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxFontMan.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxGeom.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxImposter.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxLight.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxLightMan.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxLoadScreen.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxMesh.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxMiscFX.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxModel.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxNewParticle.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxNewParticleMgr.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\nxparticle.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\nxparticlemgr.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxQuickAnim.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxScene.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxSector.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxSkinComponent.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxSprite.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxTexMan.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxTexture.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxTextured3dPoly.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxViewMan.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\NxViewport.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\nxweather.cpp">
+      <Filter>Source Files\Gfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\2D\BlurEffect.cpp">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\2D\Element3d.cpp">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\2D\Menu2.cpp">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\2D\ScreenElement2.cpp">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\2D\ScreenElemMan.cpp">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\2D\ScrollingMenu.cpp">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\2D\SpriteElement.cpp">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\2D\TextElement.cpp">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Gfx\2D\Window.cpp">
+      <Filter>Source Files\Gfx\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\car.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\crown.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\cutscenedetails.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\emitter.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\followob.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\GameObj.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\gap.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\manual.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\moviecam.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\moviedetails.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\MovingObject.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\navigation.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\objecthook.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\PathMan.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\PathOb.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\ped.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\PlayerProfileManager.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\proxim.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\rail.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\records.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\restart.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\skater.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\SkaterButton.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\skatercam.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\skatercareer.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\skaterpad.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\SkaterProfile.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\SkaterTricks.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\TrickObject.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Sk\Objects\ViewerObj.cpp">
+      <Filter>Source Files\Sk\Objects</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Code\Core\Math\matrix.inl">
+      <Filter>Source Files\Core\Math</Filter>
+    </None>
+    <None Include="..\..\..\Code\Core\Math\quat.inl">
+      <Filter>Source Files\Core\Math</Filter>
+    </None>
+    <None Include="..\..\..\Code\Core\Math\vector.inl">
+      <Filter>Source Files\Core\Math</Filter>
+    </None>
+  </ItemGroup>
+</Project>
