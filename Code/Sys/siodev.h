@@ -32,7 +32,7 @@
 #endif
 
 #ifdef __PLAT_XBOX__
-#include <xtl.h>
+
 #endif
 
 /*****************************************************************************
@@ -82,9 +82,10 @@ private :
     unsigned char       m_actuator_direct[ACTUATOR_BUFFER_LENGTH];
     unsigned char       m_actuator_max[ACTUATOR_BUFFER_LENGTH];
 	
-#	ifdef __PLAT_XBOX__
+//#	ifdef __PLAT_XBOX__
+#if 0
 	HANDLE				m_handle;
-#	endif
+#endif
 
 	// Ken: Stores the m_actuator_direct values when the game is paused.
 	unsigned char       m_actuator_old_direct[ACTUATOR_BUFFER_LENGTH];

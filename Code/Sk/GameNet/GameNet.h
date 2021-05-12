@@ -30,8 +30,6 @@
 #include <gel/prefs/prefs.h>
 #include <gel/inpman.h>
 
-#include <gamenet/gamemsg.h>
-
 #include <sk/objects/skaterflags.h>
 #include <sk/modules/skate/skate.h>
 

@@ -21,6 +21,11 @@
 #ifndef __CORE_MATH_MATRIX_INL
 #define __CORE_MATH_MATRIX_INL
 
+#ifdef __PLAT_XBOX__
+#include <d3dx8math.h>
+#endif
+
+
 namespace Mth
 {
 						  

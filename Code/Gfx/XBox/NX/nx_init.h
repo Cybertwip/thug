@@ -2,7 +2,7 @@
 #define __NX_INIT_H
 
 #include <core/defines.h>
-#include <xgmath.h>
+#include <d3dx8math.h>
 
 namespace NxXbox
 {
@@ -12,11 +12,11 @@ void FatalFileError( uint32 error );
 
 typedef struct
 {
-	XGMATRIX			world_matrix;
-	XGMATRIX			view_matrix;
-	XGMATRIX			projection_matrix;
+	D3DXMATRIX			world_matrix;
+	D3DXMATRIX			view_matrix;
+	D3DXMATRIX			projection_matrix;
 
-	XGMATRIX			bump_env_matrix;					// Used to set the D3DTSS_BUMPENVMATnn texture states where applicable.
+	D3DXMATRIX			bump_env_matrix;					// Used to set the D3DTSS_BUMPENVMATnn texture states where applicable.
 
 	D3DVIEWPORT8		viewport;
 	float				near_plane;
@@ -28,11 +28,11 @@ typedef struct
 	bool				clear_color_buffer;					// Whether the color buffer is cleared during buffer swap and clear process.
 	bool				letterbox_active;					// Whether running in 4:3 letterbox mode.
 	D3DCOLOR			clear_color;						// The color to which the color buffer is cleared.
-	XGVECTOR3			cam_position;
-	XGVECTOR3			model_relative_cam_position;		// Used in specular lighting calculations.
-	XGVECTOR3			cam_at;
-	XGVECTOR3			cam_up;
-	XGVECTOR3			cam_right;
+	D3DXVECTOR3			cam_position;
+	D3DXVECTOR3			model_relative_cam_position;		// Used in specular lighting calculations.
+	D3DXVECTOR3			cam_at;
+	D3DXVECTOR3			cam_up;
+	D3DXVECTOR3			cam_right;
 
 	int					render_start_time;					// Time (milliseconds) at which the current frame render started.
 

@@ -19,7 +19,6 @@
 #include <gfx/camera.h>
 
 #include <sk/modules/skate/skate.h>
-#include <sk/gamenet/gamenet.h>
 
 // start autoduck documentation
 // @DOC ScreenElemMan

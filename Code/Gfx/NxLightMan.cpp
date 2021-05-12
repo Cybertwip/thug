@@ -13,7 +13,6 @@
 
 #include <gfx/debuggfx.h> // for AddDebugLine( )
 #include <sk/objects/skater.h>
-#include <sk/gamenet/gamenet.h>
 #include <sk/scripting/nodearray.h>
 #include <core/math/math.h>
 

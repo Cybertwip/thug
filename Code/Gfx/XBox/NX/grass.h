@@ -4,7 +4,7 @@
 //
 // Copyright (c) 2000-2001 Microsoft Corporation. All rights reserved.
 //-----------------------------------------------------------------------------
-#include <xtl.h>
+
 //#include "xfvf.h"
 #include <gfx/xbox/p_nxgeom.h>
 

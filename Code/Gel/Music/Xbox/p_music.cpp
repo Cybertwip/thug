@@ -23,7 +23,7 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <xtl.h>
+
 #include <core/macros.h>
 #include <core/defines.h>
 #include <core/math.h>

@@ -24,7 +24,7 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <xtl.h>
+
 #include <time.h>
 #include <sys/timer.h>
 #include <sys/profiler.h>

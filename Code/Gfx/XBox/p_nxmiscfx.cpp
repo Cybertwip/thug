@@ -579,7 +579,7 @@ static inline bool tri_texture_intersect( float u0, float v0, float u1, float v1
 /******************************************************************/
 bool plat_texture_splat( Nx::CSector **pp_sectors, Nx::CCollStatic **pp_collision, Mth::Vector& start, Mth::Vector& end, float size, float lifetime, Nx::CTexture *p_texture, Nx::sSplatTrailInstanceDetails *p_trail_details )
 {
-	XGMATRIX view_matrix, ortho_matrix, projection_matrix;
+	D3DXMATRIX view_matrix, ortho_matrix, projection_matrix;
 
 #	if DRAW_DEBUG_LINES
 	Gfx::AddDebugLine( start, end, MAKE_RGB( 200, 200, 0 ), MAKE_RGB( 200, 200, 0 ), 1 );
@@ -607,24 +607,24 @@ bool plat_texture_splat( Nx::CSector **pp_sectors, Nx::CCollStatic **pp_collisio
 		
 		up.Normalize();
 		
-		XGMatrixLookAtRH( &view_matrix, (XGVECTOR3*)( &start[X] ), (XGVECTOR3*)( &end[X] ), (XGVECTOR3*)( &up[X] ));
-		XGMatrixOrthoRH( &ortho_matrix, size, height, 0.1f, view_depth );
+		D3DXMATRIXLookAtRH( &view_matrix, (D3DXVECTOR3*)( &start[X] ), (D3DXVECTOR3*)( &end[X] ), (D3DXVECTOR3*)( &up[X] ));
+		D3DXMATRIXOrthoRH( &ortho_matrix, size, height, 0.1f, view_depth );
 	}
 	else if( fabsf( splat_vector[Y] ) > 0.5f )
 	{
 		float angle = ((float)rand() * 2.0f * Mth::PI ) / (float)RAND_MAX;
 		up.Set( sinf( angle ), 0.0f, cosf( angle ));
-		XGMatrixLookAtRH( &view_matrix, (XGVECTOR3*)( &start[X] ), (XGVECTOR3*)( &end[X] ), (XGVECTOR3*)( &up[X] ));
-		XGMatrixOrthoRH( &ortho_matrix, size, size, 0.1f, view_depth );
+		D3DXMATRIXLookAtRH( &view_matrix, (D3DXVECTOR3*)( &start[X] ), (D3DXVECTOR3*)( &end[X] ), (D3DXVECTOR3*)( &up[X] ));
+		D3DXMATRIXOrthoRH( &ortho_matrix, size, size, 0.1f, view_depth );
 	}
 	else
 	{
 		up.Set( 0.0f, 1.0f, 0.0f );
-		XGMatrixLookAtRH( &view_matrix, (XGVECTOR3*)( &start[X] ), (XGVECTOR3*)( &end[X] ), (XGVECTOR3*)( &up[X] ));
-		XGMatrixOrthoRH( &ortho_matrix, size, size, 0.1f, view_depth );
+		D3DXMATRIXLookAtRH( &view_matrix, (D3DXVECTOR3*)( &start[X] ), (D3DXVECTOR3*)( &end[X] ), (D3DXVECTOR3*)( &up[X] ));
+		D3DXMATRIXOrthoRH( &ortho_matrix, size, size, 0.1f, view_depth );
 	}
 
-	XGMatrixMultiply( &projection_matrix, &view_matrix, &ortho_matrix );
+	D3DXMATRIXMultiply( &projection_matrix, &view_matrix, &ortho_matrix );
 	
 	// Pointer to the mesh we will be modifying. (Don't want to set the pointer up until we know for
 	// sure that we will be adding some polys).
@@ -699,10 +699,10 @@ bool plat_texture_splat( Nx::CSector **pp_sectors, Nx::CCollStatic **pp_collisio
 
 					if(( index0 != index1 ) && ( index0 != index2 ) && ( index1 != index2 ))
 					{
-						XGVECTOR3 uvprojections[3];
-						XGVec3TransformCoord( &uvprojections[0], (XGVECTOR3*)( p_vert_data + ( p_mesh->m_vertex_stride * index0 )), &projection_matrix );
-						XGVec3TransformCoord( &uvprojections[1], (XGVECTOR3*)( p_vert_data + ( p_mesh->m_vertex_stride * index1 )), &projection_matrix );
-						XGVec3TransformCoord( &uvprojections[2], (XGVECTOR3*)( p_vert_data + ( p_mesh->m_vertex_stride * index2 )), &projection_matrix );
+						D3DXVECTOR3 uvprojections[3];
+						XGVec3TransformCoord( &uvprojections[0], (D3DXVECTOR3*)( p_vert_data + ( p_mesh->m_vertex_stride * index0 )), &projection_matrix );
+						XGVec3TransformCoord( &uvprojections[1], (D3DXVECTOR3*)( p_vert_data + ( p_mesh->m_vertex_stride * index1 )), &projection_matrix );
+						XGVec3TransformCoord( &uvprojections[2], (D3DXVECTOR3*)( p_vert_data + ( p_mesh->m_vertex_stride * index2 )), &projection_matrix );
 
 						// Check the z-values here, everything else is checked in tri_texture_intersect().
 						if(( uvprojections[0].z < 0.0f ) && ( uvprojections[1].z < 0.0f ) && ( uvprojections[2].z < 0.0f ))

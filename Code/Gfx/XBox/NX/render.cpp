@@ -52,8 +52,8 @@ DWORD ShadowBufferStaticGeomPS;
 
 //D3DXMATRIX *p_bbox_transform = NULL;
 //D3DXMATRIX bbox_transform;
-XGMATRIX	*p_bbox_transform = NULL;
-XGMATRIX	bbox_transform;
+D3DXMATRIX	*p_bbox_transform = NULL;
+D3DXMATRIX	bbox_transform;
 
 extern DWORD ShadowBufferStaticGeomVS;
 
@@ -1708,8 +1708,8 @@ void create_texture_projection_details( sTexture *p_texture, Nx::CXboxModel *p_m
 	p_details->p_scene		= p_scene;
 	p_details->p_texture	= p_texture;
 	
-	XGMatrixIdentity( &p_details->view_matrix );
-	XGMatrixIdentity( &p_details->projection_matrix );
+	D3DXMATRIXIdentity( &p_details->view_matrix );
+	D3DXMATRIXIdentity( &p_details->projection_matrix );
 	
 	pTextureProjectionDetailsTable->PutItem((uint32)p_texture, p_details );
 }
@@ -1736,7 +1736,7 @@ void destroy_texture_projection_details( sTexture *p_texture )
 /*                                                                */
 /*                                                                */
 /******************************************************************/
-void set_texture_projection_camera( sTexture *p_texture, XGVECTOR3 *p_pos, XGVECTOR3 *p_at )
+void set_texture_projection_camera( sTexture *p_texture, D3DXVECTOR3 *p_pos, D3DXVECTOR3 *p_at )
 {
 	sTextureProjectionDetails *p_details = pTextureProjectionDetailsTable->GetItem((uint32)p_texture );
 	if( p_details )
@@ -1744,13 +1744,13 @@ void set_texture_projection_camera( sTexture *p_texture, XGVECTOR3 *p_pos, XGVEC
 		// Check for 'straight down' vector.
 		if(( p_pos->x == p_at->x ) && ( p_pos->z == p_at->z ))
 		{
-			XGMatrixLookAtRH( &p_details->view_matrix, p_pos, p_at, &XGVECTOR3( 0.0f, 0.0f, 1.0f ));
+			D3DXMATRIXLookAtRH( &p_details->view_matrix, p_pos, p_at, &D3DXVECTOR3( 0.0f, 0.0f, 1.0f ));
 		}
 		else
 		{
-			XGMatrixLookAtRH( &p_details->view_matrix, p_pos, p_at, &XGVECTOR3( 0.0f, 1.0f, 0.0f ));
+			D3DXMATRIXLookAtRH( &p_details->view_matrix, p_pos, p_at, &D3DXVECTOR3( 0.0f, 1.0f, 0.0f ));
 		}
-		XGMatrixOrthoRH( &p_details->projection_matrix, 96.0f, 96.0f, 1.0f, 128.0f );
+		D3DXMATRIXOrthoRH( &p_details->projection_matrix, 96.0f, 96.0f, 1.0f, 128.0f );
 	}
 }
 
@@ -1775,14 +1775,14 @@ void set_camera( Mth::Matrix *p_matrix, Mth::Vector *p_position, float screen_an
 	EngineGlobals.cam_up.y			= p_matrix->GetUp().GetY();
 	EngineGlobals.cam_up.z			= p_matrix->GetUp().GetZ();
 	
-	XGMatrixIdentity( &EngineGlobals.world_matrix );
+	D3DXMATRIXIdentity( &EngineGlobals.world_matrix );
 
-	// XGMatrixLookAtRH() takes an 'at' position rather than a direction, so we need it relative to the camera position.
-	XGVECTOR3	at;
+	// D3DXMATRIXLookAtRH() takes an 'at' position rather than a direction, so we need it relative to the camera position.
+	D3DXVECTOR3	at;
 	at.x	= EngineGlobals.cam_position.x - EngineGlobals.cam_at.x;
 	at.y	= EngineGlobals.cam_position.y - EngineGlobals.cam_at.y;
 	at.z	= EngineGlobals.cam_position.z - EngineGlobals.cam_at.z;
-	XGMatrixLookAtRH( &EngineGlobals.view_matrix, &EngineGlobals.cam_position, &at, &EngineGlobals.cam_up );
+	D3DXMATRIXLookAtRH( &EngineGlobals.view_matrix, &EngineGlobals.cam_position, &at, &EngineGlobals.cam_up );
 
 	EngineGlobals.near_plane	= 2.0f;
 	EngineGlobals.far_plane		= 32000.0f;
@@ -1800,7 +1800,7 @@ void set_camera( Mth::Matrix *p_matrix, Mth::Vector *p_position, float screen_an
 	}
 	
 	float height	= width / aspect_ratio;
-	XGMatrixPerspectiveRH( &EngineGlobals.projection_matrix, width, height, EngineGlobals.near_plane, EngineGlobals.far_plane );
+	D3DXMATRIXPerspectiveRH( &EngineGlobals.projection_matrix, width, height, EngineGlobals.near_plane, EngineGlobals.far_plane );
 	
 	NxXbox::EngineGlobals.near_plane_width	= width;
 	NxXbox::EngineGlobals.near_plane_height	= height;
@@ -1827,7 +1827,7 @@ void set_camera( Mth::Matrix *p_matrix, Mth::Vector *p_position, float screen_an
 
 	// Set up matrix for offset bump mapping (the matrix that will be used to set the D3DTSS_BUMPENVMATnn texture states).
     float rotate_angle = atan2f( -EngineGlobals.cam_at.z, -EngineGlobals.cam_at.x );
-	XGMatrixRotationY( &EngineGlobals.bump_env_matrix, rotate_angle - D3DX_PI / 2 );
+	D3DXMATRIXRotationY( &EngineGlobals.bump_env_matrix, rotate_angle - D3DX_PI / 2 );
 
 	// Calculate vectors for billboard rendering.
 	BillboardManager.SetCameraMatrix();
@@ -1846,7 +1846,7 @@ bool IsVisible( Mth::Vector &center, float radius )
 {
 	XGVECTOR4 test_out;
 
-	XGVec3Transform( &test_out, (XGVECTOR3*)&center[X], (XGMATRIX*)&EngineGlobals.view_matrix );
+	XGVec3Transform( &test_out, (D3DXVECTOR3*)&center[X], (D3DXMATRIX*)&EngineGlobals.view_matrix );
 
 	if( -test_out.z + radius < EngineGlobals.near_plane )
 		return false;
@@ -1938,15 +1938,15 @@ bool frustum_check_sphere( D3DXVECTOR3 *p_center, float radius )
 		test_out.x = p_center->x + p_bbox_transform->_41;
 		test_out.y = p_center->y + p_bbox_transform->_42;
 		test_out.z = p_center->z + p_bbox_transform->_43;
-//		XGVec3Transform( &test_out, (XGVECTOR3*)p_center, p_bbox_transform );
+//		XGVec3Transform( &test_out, (D3DXVECTOR3*)p_center, p_bbox_transform );
 
 		// World to view.
-		XGVec3Transform( &test_out, (XGVECTOR3*)&test_out, (XGMATRIX*)&EngineGlobals.view_matrix );
+		XGVec3Transform( &test_out, (D3DXVECTOR3*)&test_out, (D3DXMATRIX*)&EngineGlobals.view_matrix );
 	}
 	else
 	{
 		// World to view.
-		XGVec3Transform( &test_out, (XGVECTOR3*)p_center, (XGMATRIX*)&EngineGlobals.view_matrix );
+		XGVec3Transform( &test_out, (D3DXVECTOR3*)p_center, (D3DXMATRIX*)&EngineGlobals.view_matrix );
 	}
 		
 	boundingSphereNearestZ = -test_out.z - radius;
@@ -1978,7 +1978,7 @@ bool frustum_check_sphere( D3DXVECTOR3 *p_center, float radius )
 /******************************************************************/
 bool frustum_check_box( Mth::CBBox *p_bbox )
 {
-	XGVECTOR3	test_in, test_out;
+	D3DXVECTOR3	test_in, test_out;
 	XGVECTOR4	test_mid;
 	
 	uint32	cumulative_projection_space_outcode	= 0xFF;
@@ -2071,15 +2071,15 @@ static sSortedMeshEntry	sortedMeshArray[1000];
 /*                                                                */
 /*                                                                */
 /******************************************************************/
-void calculate_tex_proj_matrix( XGMATRIX *p_tex_view_matrix, XGMATRIX *p_tex_proj_matrix, XGMATRIX *p_tex_transform_matrix, XGMATRIX *p_world_matrix )
+void calculate_tex_proj_matrix( D3DXMATRIX *p_tex_view_matrix, D3DXMATRIX *p_tex_proj_matrix, D3DXMATRIX *p_tex_transform_matrix, D3DXMATRIX *p_world_matrix )
 {
 	// Get the current view matrix.
-	XGMATRIX matView, matInvView;
-	D3DDevice_GetTransform( D3DTS_VIEW, (XGMATRIX*)&matView );
-	XGMatrixInverse( &matInvView,  NULL, &matView );
+	D3DXMATRIX matView, matInvView;
+	D3DDevice_GetTransform( D3DTS_VIEW, (D3DXMATRIX*)&matView );
+	D3DXMATRIXInverse( &matInvView,  NULL, &matView );
 
-	XGMATRIX matBiasScale;
-    XGMatrixIdentity( &matBiasScale );
+	D3DXMATRIX matBiasScale;
+    D3DXMATRIXIdentity( &matBiasScale );
 
 	static float x0 = 256.0f;
 	static float y0 = 256.0f;
@@ -2094,20 +2094,20 @@ void calculate_tex_proj_matrix( XGMATRIX *p_tex_view_matrix, XGMATRIX *p_tex_pro
 	matBiasScale._41 = x1 * 0.5f + 0.5f;
 	matBiasScale._42 = y1 * 0.5f + 0.5f;
 
-	XGMATRIX m_matTexProj;
+	D3DXMATRIX m_matTexProj;
 
 	// Don't bother with inverse view transform for Shadow Buffer, since we are picking up world-space coordinates directly.
 	if( p_world_matrix )
 	{
 		m_matTexProj = *p_world_matrix;												// Transform to world space.
-		XGMatrixMultiply( &m_matTexProj, &m_matTexProj, p_tex_view_matrix );		// Transform to projection camera space.
+		D3DXMATRIXMultiply( &m_matTexProj, &m_matTexProj, p_tex_view_matrix );		// Transform to projection camera space.
 	}
 	else
 	{
 		m_matTexProj = *p_tex_view_matrix;											// Transform to projection camera space.
 	}
-	XGMatrixMultiply( &m_matTexProj, &m_matTexProj, p_tex_proj_matrix );			// Situate verts relative to projector's view
-    XGMatrixMultiply( p_tex_transform_matrix, &m_matTexProj, &matBiasScale );		// Scale and bias to map the near clipping plane to texcoords
+	D3DXMATRIXMultiply( &m_matTexProj, &m_matTexProj, p_tex_proj_matrix );			// Situate verts relative to projector's view
+    D3DXMATRIXMultiply( p_tex_transform_matrix, &m_matTexProj, &matBiasScale );		// Scale and bias to map the near clipping plane to texcoords
 }
 
 
@@ -2118,8 +2118,8 @@ void calculate_tex_proj_matrix( XGMATRIX *p_tex_view_matrix, XGMATRIX *p_tex_pro
 /******************************************************************/
 void render_shadow_targets( void )
 {
-	XGMATRIX	stored_view_matrix			= EngineGlobals.view_matrix;
-	XGMATRIX	stored_projection_matrix	= EngineGlobals.projection_matrix;
+	D3DXMATRIX	stored_view_matrix			= EngineGlobals.view_matrix;
+	D3DXMATRIX	stored_projection_matrix	= EngineGlobals.projection_matrix;
 	uint32		stored_fog_state			= EngineGlobals.fog_enabled;
 	DWORD		multisample_mode;
 
@@ -2252,8 +2252,8 @@ void render_shadow_meshes( sScene *p_scene, sMesh **p_mesh_indices, int num_mesh
 	sTextureProjectionDetails *p_details = pTextureProjectionDetailsTable->IterateNext();
 	while( p_details )
 	{
-		XGMATRIX	stored_view_matrix			= EngineGlobals.view_matrix;
-		XGMATRIX	stored_projection_matrix	= EngineGlobals.projection_matrix;
+		D3DXMATRIX	stored_view_matrix			= EngineGlobals.view_matrix;
+		D3DXMATRIX	stored_projection_matrix	= EngineGlobals.projection_matrix;
 			
 		// Calculate the projection matrix that will project world coordinates into our shadow buffer.
 		calculate_tex_proj_matrix( &p_details->view_matrix, &p_details->projection_matrix, &p_details->texture_projection_matrix );
@@ -2291,32 +2291,32 @@ void render_shadow_meshes( sScene *p_scene, sMesh **p_mesh_indices, int num_mesh
 			
 		// Upload constants to the vertex shader for composite world->view->projection transform (c0 - c3) and
 		// world->texture transform (c4 - c7).
-		XGMATRIX	dest_matrix;
-		XGMATRIX	temp_matrix;
-		XGMATRIX	projMatrix;
-		XGMATRIX	viewMatrix;
-		XGMATRIX	worldMatrix;
-		XGMATRIX	texProjMatrix;
+		D3DXMATRIX	dest_matrix;
+		D3DXMATRIX	temp_matrix;
+		D3DXMATRIX	projMatrix;
+		D3DXMATRIX	viewMatrix;
+		D3DXMATRIX	worldMatrix;
+		D3DXMATRIX	texProjMatrix;
 
 		// Texture projection matrix.
-		XGMatrixTranspose( &texProjMatrix, &p_details->texture_projection_matrix );
+		D3DXMATRIXTranspose( &texProjMatrix, &p_details->texture_projection_matrix );
 		
 		// Projection matrix.
-		XGMatrixTranspose( &projMatrix, &EngineGlobals.projection_matrix );
+		D3DXMATRIXTranspose( &projMatrix, &EngineGlobals.projection_matrix );
 	
 		// View matrix.
-		XGMatrixTranspose( &viewMatrix, &EngineGlobals.view_matrix );
+		D3DXMATRIXTranspose( &viewMatrix, &EngineGlobals.view_matrix );
 		viewMatrix.m[3][0] = 0.0f;
 		viewMatrix.m[3][1] = 0.0f;
 		viewMatrix.m[3][2] = 0.0f;
 		viewMatrix.m[3][3] = 1.0f;
 	
 		// World space transformation matrix.
-		XGMatrixIdentity( &worldMatrix );
+		D3DXMATRIXIdentity( &worldMatrix );
 
 		// Calculate composite world->view->projection matrix.
-		XGMatrixMultiply( &temp_matrix, &viewMatrix, &worldMatrix );
-		XGMatrixMultiply( &dest_matrix, &projMatrix, &temp_matrix );
+		D3DXMATRIXMultiply( &temp_matrix, &viewMatrix, &worldMatrix );
+		D3DXMATRIXMultiply( &dest_matrix, &projMatrix, &temp_matrix );
 
 		// Load up the combined world, camera & projection matrix, and the tetxure transform matrix.
 		D3DDevice_SetVertexShaderConstantFast( 0, (void*)&dest_matrix, 4 );

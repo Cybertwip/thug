@@ -11,7 +11,7 @@
 #ifndef LEVEL_LOADER_H
 #define LEVEL_LOADER_H
 
-#include <xtl.h>
+
 #include <xgraphics.h>
 #include <cstdio>
 #include <sys\timer.h>

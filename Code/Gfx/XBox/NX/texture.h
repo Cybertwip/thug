@@ -24,7 +24,7 @@ struct sTexture
 	uint8				DXT;
 
 	IDirect3DTexture8*	pD3DTexture;
-	IDirect3DPalette8*	pD3DPalette;
+	IDirect3DTexture8*	pD3DPalette;
 	IDirect3DSurface8*	pD3DSurface;
 };
 

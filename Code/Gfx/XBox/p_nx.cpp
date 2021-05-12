@@ -993,8 +993,8 @@ void CEngine::s_plat_project_texture_into_scene( Nx::CTexture *p_texture, Nx::CM
 void CEngine::s_plat_set_projection_texture_camera( Nx::CTexture *p_texture, Gfx::Camera *p_camera )
 {
 	Nx::CXboxTexture	*p_xbox_texture	= static_cast<CXboxTexture*>( p_texture );
-	XGVECTOR3			pos( p_camera->GetPos()[X], p_camera->GetPos()[Y], p_camera->GetPos()[Z] );
-	XGVECTOR3			at = pos + D3DXVECTOR3( p_camera->GetMatrix()[Z][X], p_camera->GetMatrix()[Z][Y], p_camera->GetMatrix()[Z][Z] );
+	D3DXVECTOR3			pos( p_camera->GetPos()[X], p_camera->GetPos()[Y], p_camera->GetPos()[Z] );
+	D3DXVECTOR3			at = pos + D3DXVECTOR3( p_camera->GetMatrix()[Z][X], p_camera->GetMatrix()[Z][Y], p_camera->GetMatrix()[Z][Z] );
 	
 	NxXbox::set_texture_projection_camera( p_xbox_texture->GetEngineTexture(), &pos, &at );
 }

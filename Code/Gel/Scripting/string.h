@@ -1,9 +1,7 @@
 #ifndef	__SCRIPTING_STRING_H
 #define	__SCRIPTING_STRING_H
 
-#ifndef __CORE_DEFINES_H
 #include <core/defines.h>
-#endif
 
 namespace Script
 {

@@ -44,13 +44,9 @@
 #include "sntcutil.h"      /* SN Systems PS2 EE Utilites (TCP/IP)    */
 #endif	// __PLAT_NGPS__
 
-#ifdef __PLAT_WN32__
-#include <winsock2.h>
-#endif // __PLAT_WN32__
-
 #ifdef __PLAT_XBOX__
-#include <xtl.h>
-#include <winsockx.h>
+
+#include <winsock.h>
 #endif // __PLAT_XBOX__
 
 #ifdef __PLAT_NGC__
@@ -1129,7 +1125,8 @@ public:
 	unsigned int m_DupePackets;
 	unsigned int m_FrameCounter;
 
-#ifdef __PLAT_XBOX__
+//#ifdef __PLAT_XBOX__
+#if 0
 	XNADDR		m_XboxAddr;
 	XNKID		m_XboxKeyId;
 	XNKEY		m_XboxKey;
@@ -1353,29 +1350,6 @@ inline	Metrics*	Conn::GetOutboundMetrics( void )
 
 
 }	// namespace Net
-
-
-/*****************************************************************************
-**								Inline Functions							**
-*****************************************************************************/
-
-#ifdef __PLAT_XBOX__
-// Need this to be outside the Net:: namespace...
-inline char* inet_ntoa( struct in_addr addr )
-{
-	IN_ADDR		in_a;
-	in_a.S_un	= addr.S_un;
-
-	const int	STRING_BUFFER_SIZE = 100;
-//	static char	string_buffer[STRING_BUFFER_SIZE];
-//	int			rv = XNetInAddrToString( in_a, string_buffer, STRING_BUFFER_SIZE );
-
-	// Cheesy hack for now.
-	static char	string_buffer[STRING_BUFFER_SIZE] = "0.0.0.0";
-
-	return string_buffer;
-}
-#endif
 
 #endif // __NET_H__
 

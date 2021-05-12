@@ -364,28 +364,28 @@ void sBillboardMaterialBatch::Render( void )
 		}
 
 		// Load up the combined world->view_projection matrix.
-		XGMATRIX	dest_matrix;
-		XGMATRIX	temp_matrix;
-		XGMATRIX	projMatrix;
-		XGMATRIX	viewMatrix;
-		XGMATRIX	worldMatrix;
+		D3DXMATRIX	dest_matrix;
+		D3DXMATRIX	temp_matrix;
+		D3DXMATRIX	projMatrix;
+		D3DXMATRIX	viewMatrix;
+		D3DXMATRIX	worldMatrix;
 		
 		// Projection matrix.
-		XGMatrixTranspose( &projMatrix, &EngineGlobals.projection_matrix );
+		D3DXMATRIXTranspose( &projMatrix, &EngineGlobals.projection_matrix );
 	
 		// View matrix.
-		XGMatrixTranspose( &viewMatrix, &EngineGlobals.view_matrix );
+		D3DXMATRIXTranspose( &viewMatrix, &EngineGlobals.view_matrix );
 		viewMatrix.m[3][0] = 0.0f;
 		viewMatrix.m[3][1] = 0.0f;
 		viewMatrix.m[3][2] = 0.0f;
 		viewMatrix.m[3][3] = 1.0f;
 	
 		// World space transformation matrix.
-		XGMatrixIdentity( &worldMatrix );
+		D3DXMATRIXIdentity( &worldMatrix );
 
 		// Calculate composite world->view->projection matrix.
-		XGMatrixMultiply( &temp_matrix, &viewMatrix, &worldMatrix );
-		XGMatrixMultiply( &dest_matrix, &projMatrix, &temp_matrix );
+		D3DXMATRIXMultiply( &temp_matrix, &viewMatrix, &worldMatrix );
+		D3DXMATRIXMultiply( &dest_matrix, &projMatrix, &temp_matrix );
 
 		// Load up the combined world, camera & projection matrix.
 		D3DDevice_SetVertexShaderConstantFast( 0, (void*)&dest_matrix, 4 );

@@ -397,7 +397,7 @@ int OurPrintf ( const char* fmt, ... )
 		
 	#ifdef	__PLAT_XBOX__
 	case Config::HARDWARE_XBOX:
-		OutputDebugString(p_buffer);
+		printf("%s", p_buffer);
 		break;
 	#endif
 	

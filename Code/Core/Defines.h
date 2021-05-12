@@ -61,6 +61,7 @@ using namespace std;
 #else
 #ifdef __PLAT_XBOX__
 #include <stdio.h>
+#include <stdint.h>
 //#include <iostream.h>
 #include <string.h>
 #include <stdlib.h>

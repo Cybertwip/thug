@@ -65,7 +65,7 @@ extern 	AssertTrap	default_trap;
 #ifdef __NOPT_DEBUG__
 void	Assert ( char* file, uint line, Signature& sig, char* reason = msg_unknown_reason );
 #else
-void	Assert ( char* file, uint line, char* reason = msg_unknown_reason );
+void	Assert ( char* file, uint line, const char* reason = msg_unknown_reason );
 #endif
 
 void	pad_printf ( const char* text, ... );

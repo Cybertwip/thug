@@ -22,7 +22,7 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <xtl.h>
+
 #include <core/defines.h>
 #include <sys/file/filesys.h>
 #include <sys/timer.h>

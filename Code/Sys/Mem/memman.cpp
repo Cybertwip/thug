@@ -36,7 +36,7 @@
 #include "alloc.h"
 #include <sys/profiler.h>
 #ifdef __PLAT_XBOX__
-#include <xtl.h>
+
 #endif
 #ifdef __PLAT_NGC__
 #include <dolphin.h>
@@ -155,10 +155,9 @@ Manager::Manager( void )
 	
 #	if defined ( __PLAT_XBOX__ )
 	// Just grab 33mb of main memory.
-	_mem_start		= (char*)XPhysicalAlloc(	33 * 1024 * 1024,				// size of region
-												MAXULONG_PTR,					// base physical address
-												0,								// memory alignment
-												PAGE_READWRITE );				// memory protection and type
+	_mem_start = (char*)malloc(33 * 1024 * 1024);
+
+	memset(_mem_start, 0, 33 * 1024 * 1024);
 
 	_mem_end		= _mem_start + ( 33 * 1024 * 1024 );
 	_std_mem_end	= _mem_end;
@@ -232,6 +231,8 @@ Manager::~Manager( void )
 	mp_top_heap->~Heap();
 	mp_bot_heap->~Heap();
 	mp_region->~Region();
+
+	free(_mem_start);
 
 #ifdef __PLAT_NGPS__
 	DeleteSema( s_context_semaphore );

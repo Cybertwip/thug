@@ -1,4 +1,4 @@
-#include <xtl.h>
+
 #include <xgraphics.h>
 #include <core\defines.h>
 #include <core\crc.h>

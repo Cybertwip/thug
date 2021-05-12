@@ -125,7 +125,7 @@ void	screen_assert( bool on )
 #ifdef	__NOPT_DEBUG__
 void		Assert( char* file, uint line, Signature& sig, char* reason )
 #else
-void		Assert( char* file, uint line, char* reason )
+void		Assert( char* file, uint line, const char* reason )
 #endif
 {
 	static	char		assert_buffer1[vASSERT_BUFFER_SIZE];

@@ -1,4 +1,4 @@
-#include <xtl.h>
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -307,18 +307,18 @@ void CreateWeightedMeshVertexShaders( void )
 /******************************************************************/
 void setup_weighted_mesh_vertex_shader( void *p_root_matrix, void *p_bone_matrices, int num_bone_matrices )
 {
-	XGMATRIX	dest_matrix;
-	XGMATRIX	inverse_view_matrix;
-	XGMATRIX	temp_matrix;
-	XGMATRIX	projMatrix;
-	XGMATRIX	viewMatrix;
-	XGMATRIX	worldMatrix;
+	D3DXMATRIX	dest_matrix;
+	D3DXMATRIX	inverse_view_matrix;
+	D3DXMATRIX	temp_matrix;
+	D3DXMATRIX	projMatrix;
+	D3DXMATRIX	viewMatrix;
+	D3DXMATRIX	worldMatrix;
 
 	// Projection matrix.
-	XGMatrixTranspose( &projMatrix, &EngineGlobals.projection_matrix );
+	D3DXMATRIXTranspose( &projMatrix, &EngineGlobals.projection_matrix );
 	
 	// View matrix.
-	XGMatrixTranspose( &viewMatrix, &EngineGlobals.view_matrix );
+	D3DXMATRIXTranspose( &viewMatrix, &EngineGlobals.view_matrix );
     viewMatrix.m[3][0] = 0.0f;
     viewMatrix.m[3][1] = 0.0f;
     viewMatrix.m[3][2] = 0.0f;
@@ -343,8 +343,8 @@ void setup_weighted_mesh_vertex_shader( void *p_root_matrix, void *p_bone_matric
 	worldMatrix.m[3][3] = 1.0f;
 
 	// Calculate composite world->view->projection matrix.
-	XGMatrixMultiply( &temp_matrix, &viewMatrix, &worldMatrix );
-	XGMatrixMultiply( &dest_matrix, &projMatrix, &temp_matrix );
+	D3DXMATRIXMultiply( &temp_matrix, &viewMatrix, &worldMatrix );
+	D3DXMATRIXMultiply( &dest_matrix, &projMatrix, &temp_matrix );
 
 	// Switch to 192 constant mode, removing the lock on the reserved constants c-38 and c-37.
 //	D3DDevice_SetShaderConstantMode( D3DSCM_192CONSTANTS | D3DSCM_NORESERVEDCONSTANTS );
@@ -356,19 +356,19 @@ void setup_weighted_mesh_vertex_shader( void *p_root_matrix, void *p_bone_matric
 	// We want to transform the light directions by the inverse of the world transform - this means we don't have to transform
 	// the normal by the world transform for every vertex in the vertex shader. However, the function D3DXVec3TransformNormal
 	// (used below) does the inverse transform for us, so need to actually figure the inverse...
-//	XGMATRIX inverse_world_transform = worldMatrix;
+//	D3DXMATRIX inverse_world_transform = worldMatrix;
 //	D3DXMatrixInverse( &inverse_world_transform, NULL, &worldMatrix );
 
 	float directional_light_color[24];
 	CopyMemory( directional_light_color, EngineGlobals.directional_light_color, sizeof( float ) * 24 );
 	
-	XGVec3TransformNormal((XGVECTOR3*)&directional_light_color[0],	(XGVECTOR3*)&EngineGlobals.directional_light_color[0], &worldMatrix );
-	XGVec3TransformNormal((XGVECTOR3*)&directional_light_color[8],	(XGVECTOR3*)&EngineGlobals.directional_light_color[8], &worldMatrix );
-	XGVec3TransformNormal((XGVECTOR3*)&directional_light_color[16],	(XGVECTOR3*)&EngineGlobals.directional_light_color[16], &worldMatrix );
+	XGVec3TransformNormal((D3DXVECTOR3*)&directional_light_color[0],	(D3DXVECTOR3*)&EngineGlobals.directional_light_color[0], &worldMatrix );
+	XGVec3TransformNormal((D3DXVECTOR3*)&directional_light_color[8],	(D3DXVECTOR3*)&EngineGlobals.directional_light_color[8], &worldMatrix );
+	XGVec3TransformNormal((D3DXVECTOR3*)&directional_light_color[16],	(D3DXVECTOR3*)&EngineGlobals.directional_light_color[16], &worldMatrix );
 	
-	XGVec3Normalize((XGVECTOR3*)&directional_light_color[0], (XGVECTOR3*)&directional_light_color[0] ); 
-	XGVec3Normalize((XGVECTOR3*)&directional_light_color[8], (XGVECTOR3*)&directional_light_color[8] ); 
-	XGVec3Normalize((XGVECTOR3*)&directional_light_color[16], (XGVECTOR3*)&directional_light_color[16] ); 
+	XGVec3Normalize((D3DXVECTOR3*)&directional_light_color[0], (D3DXVECTOR3*)&directional_light_color[0] ); 
+	XGVec3Normalize((D3DXVECTOR3*)&directional_light_color[8], (D3DXVECTOR3*)&directional_light_color[8] ); 
+	XGVec3Normalize((D3DXVECTOR3*)&directional_light_color[16], (D3DXVECTOR3*)&directional_light_color[16] ); 
 
 	// Load up the directional light data.
 	D3DDevice_SetVertexShaderConstantFast( VSCONST_REG_DIR_LIGHT_OFFSET, (void*)directional_light_color, 6 );
@@ -377,7 +377,7 @@ void setup_weighted_mesh_vertex_shader( void *p_root_matrix, void *p_bone_matric
 	D3DDevice_SetVertexShaderConstantFast( VSCONST_REG_AMB_LIGHT_OFFSET, (void*)EngineGlobals.ambient_light_color, 1 );
 	
 	// Calculate and load up the model-relative camera position.
-	EngineGlobals.model_relative_cam_position = XGVECTOR3( EngineGlobals.cam_position.x - worldMatrix.m[0][3],
+	EngineGlobals.model_relative_cam_position = D3DXVECTOR3( EngineGlobals.cam_position.x - worldMatrix.m[0][3],
 														   EngineGlobals.cam_position.y - worldMatrix.m[1][3],
 														   EngineGlobals.cam_position.z - worldMatrix.m[2][3] );
 	XGVec3TransformNormal( &EngineGlobals.model_relative_cam_position, &EngineGlobals.model_relative_cam_position, &worldMatrix );

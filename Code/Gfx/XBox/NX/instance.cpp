@@ -525,7 +525,7 @@ void CInstance::Render( uint32 flags )
 					{
 						// Need to incorporate the world matrix into the texture projection matrix, since we will be using the bone-transformed
 						// vertex positions, which are in object space.
-						XGMATRIX world_matrix;
+						D3DXMATRIX world_matrix;
 						world_matrix.m[0][0] = GetTransform()->GetRight()[X];
 						world_matrix.m[0][1] = GetTransform()->GetRight()[Y];
 						world_matrix.m[0][2] = GetTransform()->GetRight()[Z];
@@ -681,7 +681,7 @@ void CInstance::RenderShadowVolume( void )
 {
 	if( GetBoneTransforms())
 	{
-		XGMATRIX root_matrix = *((XGMATRIX*)GetTransform());
+		D3DXMATRIX root_matrix = *((D3DXMATRIX*)GetTransform());
 
 		sScene*	p_scene = GetScene();
 
@@ -700,7 +700,7 @@ void CInstance::RenderShadowVolume( void )
 			for( int v = 0; v < p_mesh->m_num_vertices; ++v )
 			{
 				// Get untransformed point.
-				XGVECTOR3*	p_source_vertex	= (XGVECTOR3*)( p_byte + ( v * p_mesh->m_vertex_stride ));
+				D3DXVECTOR3*	p_source_vertex	= (D3DXVECTOR3*)( p_byte + ( v * p_mesh->m_vertex_stride ));
 
 				// Get and unpack weights.
 				uint32		packed_weights	= *((uint32*)( p_byte + ( v * p_mesh->m_vertex_stride ) + 12 ));
@@ -715,9 +715,9 @@ void CInstance::RenderShadowVolume( void )
 				uint32		i2				= ( packed_indices >> 16 ) & 0xff;
 
 				// Get bone matrix pointers.
-				XGMATRIX*	p_bone_mat0		= (XGMATRIX*)( GetBoneTransforms() + i0 );
-				XGMATRIX*	p_bone_mat1		= (XGMATRIX*)( GetBoneTransforms() + i1 );
-				XGMATRIX*	p_bone_mat2		= (XGMATRIX*)( GetBoneTransforms() + i2 );
+				D3DXMATRIX*	p_bone_mat0		= (D3DXMATRIX*)( GetBoneTransforms() + i0 );
+				D3DXMATRIX*	p_bone_mat1		= (D3DXMATRIX*)( GetBoneTransforms() + i1 );
+				D3DXMATRIX*	p_bone_mat2		= (D3DXMATRIX*)( GetBoneTransforms() + i2 );
 
 				XGVECTOR4	tp0;
 				XGVECTOR4	tp1;
@@ -725,19 +725,19 @@ void CInstance::RenderShadowVolume( void )
 
 				// Transform point by bone matrix 0, 1 and 2 and scale with weight 0, 1, 2.
 				XGVec3Transform( &tp0, p_source_vertex, p_bone_mat0 );
-				XGVec3Scale((XGVECTOR3*)&tp0, (XGVECTOR3*)&tp0, w0 );
+				XGVec3Scale((D3DXVECTOR3*)&tp0, (D3DXVECTOR3*)&tp0, w0 );
 
 				XGVec3Transform( &tp1, p_source_vertex, p_bone_mat1 );
-				XGVec3Scale((XGVECTOR3*)&tp1, (XGVECTOR3*)&tp1, w1 );
+				XGVec3Scale((D3DXVECTOR3*)&tp1, (D3DXVECTOR3*)&tp1, w1 );
 
 				XGVec3Transform( &tp2, p_source_vertex, p_bone_mat2 );
-				XGVec3Scale((XGVECTOR3*)&tp2, (XGVECTOR3*)&tp2, w2 );
+				XGVec3Scale((D3DXVECTOR3*)&tp2, (D3DXVECTOR3*)&tp2, w2 );
 
 				// Obtain cumulative result.
 				tp0 = tp0 + tp1 + tp2;
 
 				// Tranform point by object transform.
-				XGVec3Transform( p_t_buffer + v, (XGVECTOR3*)&tp0, &root_matrix );
+				XGVec3Transform( p_t_buffer + v, (D3DXVECTOR3*)&tp0, &root_matrix );
 			}
 			delete [] p_t_buffer;
 		}

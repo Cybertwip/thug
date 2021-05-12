@@ -270,22 +270,22 @@ void CXboxNewParticle::plat_render( void )
 		NxXbox::set_pixel_shader( PixelShader0 );
 
 		// Load up the combined world->view_projection matrix.
-		XGMATRIX	dest_matrix;
-		XGMATRIX	projMatrix;
-		XGMATRIX	viewMatrix;
+		D3DXMATRIX	dest_matrix;
+		D3DXMATRIX	projMatrix;
+		D3DXMATRIX	viewMatrix;
 			
 		// Projection matrix.
-		XGMatrixTranspose( &projMatrix, &NxXbox::EngineGlobals.projection_matrix );
+		D3DXMATRIXTranspose( &projMatrix, &NxXbox::EngineGlobals.projection_matrix );
 		
 		// View matrix.
-		XGMatrixTranspose( &viewMatrix, &NxXbox::EngineGlobals.view_matrix );
+		D3DXMATRIXTranspose( &viewMatrix, &NxXbox::EngineGlobals.view_matrix );
 		viewMatrix.m[3][0] = 0.0f;
 		viewMatrix.m[3][1] = 0.0f;
 		viewMatrix.m[3][2] = 0.0f;
 		viewMatrix.m[3][3] = 1.0f;
 
 		// Calculate composite world->view->projection matrix (simplified since world transform will be indentity).
-		XGMatrixMultiply( &dest_matrix, &projMatrix, &viewMatrix );
+		D3DXMATRIXMultiply( &dest_matrix, &projMatrix, &viewMatrix );
 
 		// Load up the combined world, camera & projection matrix.
 		D3DDevice_SetVertexShaderConstantFast( 0, (void*)&dest_matrix, 4 );
@@ -483,22 +483,22 @@ void CXboxNewParticle::plat_render( void )
 		NxXbox::set_pixel_shader( PixelShaderPointSprite );
 
 		// Load up the combined world->view_projection matrix.
-		XGMATRIX	dest_matrix;
-		XGMATRIX	projMatrix;
-		XGMATRIX	viewMatrix;
+		D3DXMATRIX	dest_matrix;
+		D3DXMATRIX	projMatrix;
+		D3DXMATRIX	viewMatrix;
 			
 		// Projection matrix.
-		XGMatrixTranspose( &projMatrix, &NxXbox::EngineGlobals.projection_matrix );
+		D3DXMATRIXTranspose( &projMatrix, &NxXbox::EngineGlobals.projection_matrix );
 		
 		// View matrix.
-		XGMatrixTranspose( &viewMatrix, &NxXbox::EngineGlobals.view_matrix );
+		D3DXMATRIXTranspose( &viewMatrix, &NxXbox::EngineGlobals.view_matrix );
 		viewMatrix.m[3][0] = 0.0f;
 		viewMatrix.m[3][1] = 0.0f;
 		viewMatrix.m[3][2] = 0.0f;
 		viewMatrix.m[3][3] = 1.0f;
 
 		// Calculate composite world->view->projection matrix (simplified since world transform will be indentity).
-		XGMatrixMultiply( &dest_matrix, &projMatrix, &viewMatrix );
+		D3DXMATRIXMultiply( &dest_matrix, &projMatrix, &viewMatrix );
 
 		// Load up the combined world, camera & projection matrix.
 		D3DDevice_SetVertexShaderConstantFast( 0, (void*)&dest_matrix, 4 );

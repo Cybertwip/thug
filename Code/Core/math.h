@@ -44,9 +44,7 @@ inline  float   fabs( float x ) {return fabsf( x );}
 
 
 
-#ifndef __CORE_DEFINES_H
 #include <core/defines.h>
-#endif
 #include <core/support.h>
 #include <core/math/math.h>
 #include <core/math/vector.h>

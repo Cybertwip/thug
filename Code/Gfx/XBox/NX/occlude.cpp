@@ -23,7 +23,7 @@
 **							  	  Includes									**
 *****************************************************************************/
 		
-#include <xtl.h>
+
 #include <xgmath.h>
 #include <core/math.h>
 #include <gfx/debuggfx.h>
@@ -39,7 +39,7 @@
 *****************************************************************************/
 
 //extern D3DXMATRIX *p_bbox_transform;
-extern XGMATRIX *p_bbox_transform;
+extern D3DXMATRIX *p_bbox_transform;
 
 namespace NxXbox
 {
@@ -446,7 +446,7 @@ void BuildOccluders( Mth::Vector *p_cam_pos, int view )
 /******************************************************************/
 bool TestSphereAgainstOccluders( D3DXVECTOR3 *p_center, float radius, uint32 meshes )
 {
-	XGVECTOR3 center;
+	D3DXVECTOR3 center;
 
 	// Build the composite transform if required.
 	if( p_bbox_transform )

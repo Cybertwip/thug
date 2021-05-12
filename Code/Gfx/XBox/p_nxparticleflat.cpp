@@ -169,29 +169,29 @@ void CXboxParticleFlat::plat_render( void )
 		NxXbox::set_pixel_shader( PixelShader0 );
 		
 		// Load up the combined world->view_projection matrix.
-		XGMATRIX	temp_matrix;
-		XGMATRIX	dest_matrix;
-		XGMATRIX	projMatrix;
-		XGMATRIX	viewMatrix;
-		XGMATRIX	worldMatrix;
+		D3DXMATRIX	temp_matrix;
+		D3DXMATRIX	dest_matrix;
+		D3DXMATRIX	projMatrix;
+		D3DXMATRIX	viewMatrix;
+		D3DXMATRIX	worldMatrix;
 		
 		// Projection matrix.
-		XGMatrixTranspose( &projMatrix, &NxXbox::EngineGlobals.projection_matrix );
+		D3DXMATRIXTranspose( &projMatrix, &NxXbox::EngineGlobals.projection_matrix );
 	
 		// View matrix.
-		XGMatrixTranspose( &viewMatrix, &NxXbox::EngineGlobals.view_matrix );
+		D3DXMATRIXTranspose( &viewMatrix, &NxXbox::EngineGlobals.view_matrix );
 		viewMatrix.m[3][0] = 0.0f;
 		viewMatrix.m[3][1] = 0.0f;
 		viewMatrix.m[3][2] = 0.0f;
 		viewMatrix.m[3][3] = 1.0f;
 
 		// World space transformation matrix, set to be a translation matrix corresponding to the emitter position.
-		XGMatrixTranslation( &worldMatrix, m_pos[0], m_pos[1], m_pos[2] );
-		XGMatrixTranspose( &worldMatrix, &worldMatrix );
+		D3DXMATRIXTranslation( &worldMatrix, m_pos[0], m_pos[1], m_pos[2] );
+		D3DXMATRIXTranspose( &worldMatrix, &worldMatrix );
 
 		// Calculate composite world->view->projection matrix.
-		XGMatrixMultiply( &temp_matrix, &viewMatrix, &worldMatrix );
-		XGMatrixMultiply( &dest_matrix, &projMatrix, &temp_matrix );
+		D3DXMATRIXMultiply( &temp_matrix, &viewMatrix, &worldMatrix );
+		D3DXMATRIXMultiply( &dest_matrix, &projMatrix, &temp_matrix );
 
 		// Load up the combined world, camera & projection matrix.
 		D3DDevice_SetVertexShaderConstantFast( 0, (void*)&dest_matrix, 4 );

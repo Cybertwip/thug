@@ -19,7 +19,7 @@ const int XBOX_IMPOSTER_MAX_V_TEXTURE_SIZE	= 128;
 /*                                                                */
 /*                                                                */
 /******************************************************************/
-static void frustum_project_box( Mth::CBBox &bbox, XGMATRIX *p_view_matrix, Mth::Vector *p_max_x, Mth::Vector *p_max_y, Mth::Vector *p_mid )
+static void frustum_project_box( Mth::CBBox &bbox, D3DXMATRIX *p_view_matrix, Mth::Vector *p_max_x, Mth::Vector *p_max_y, Mth::Vector *p_mid )
 {
 	float	max_projected_xx, max_projected_xz;		// The camera space position of the point with the greatest x axis value when projected to z = mid_z.
 	float	max_projected_x_mid_z;					// The projected x axis value when this point is projected to z = mid_z;
@@ -35,13 +35,13 @@ static void frustum_project_box( Mth::CBBox &bbox, XGMATRIX *p_view_matrix, Mth:
 	float	max_z = bbox.GetMax().GetZ();
 
 	// Project the midpoint of the box, since this is the point through which the imposter polygon will pass.
-	XGVECTOR3 mid_in( min_x + ( 0.5f * ( max_x - min_x )), min_y + ( 0.5f * ( max_y - min_y )), min_z + ( 0.5f * ( max_z - min_z )));
+	D3DXVECTOR3 mid_in( min_x + ( 0.5f * ( max_x - min_x )), min_y + ( 0.5f * ( max_y - min_y )), min_z + ( 0.5f * ( max_z - min_z )));
 	XGVECTOR4 mid_out;
 	XGVec3Transform( &mid_out, &mid_in, p_view_matrix );
 
 	for( uint32 v = 0; v < 8; ++v )
 	{
-		XGVECTOR3 in;
+		D3DXVECTOR3 in;
 		XGVECTOR4 out;
 
 		in.x = ( v & 0x04 ) ? max_x : min_x;
@@ -236,9 +236,9 @@ void CXboxImposterGroup::plat_create_imposter_polygon( void )
 	Dbg_Assert( !m_imposter_polygon_exists );
 
 	// Generate a camera matrix that will point the camera directly at the midpoint of the bounding box.
-	XGMATRIX	cam_mat;
-	XGVECTOR3	look_at( m_composite_bbox_mid[X], m_composite_bbox_mid[Y], m_composite_bbox_mid[Z] );
-	XGMatrixLookAtRH( &cam_mat, &NxXbox::EngineGlobals.cam_position, &look_at, &NxXbox::EngineGlobals.cam_up );
+	D3DXMATRIX	cam_mat;
+	D3DXVECTOR3	look_at( m_composite_bbox_mid[X], m_composite_bbox_mid[Y], m_composite_bbox_mid[Z] );
+	D3DXMATRIXLookAtRH( &cam_mat, &NxXbox::EngineGlobals.cam_position, &look_at, &NxXbox::EngineGlobals.cam_up );
 
 	// Using this camera matrix, project all eight corners of the bounding box, in order to determine the best size for the texture.
 	Mth::Vector proj_max_x, proj_max_y, proj_mid;
@@ -264,8 +264,8 @@ void CXboxImposterGroup::plat_create_imposter_polygon( void )
 	m_tex_height			= ( m_tex_height > XBOX_IMPOSTER_MAX_V_TEXTURE_SIZE ) ? XBOX_IMPOSTER_MAX_V_TEXTURE_SIZE : m_tex_height;
 
 	// Calculate the corresponding projection matrix.
-	XGMATRIX proj_mat;
-	XGMatrixPerspectiveRH( &proj_mat, wnp, hnp, NxXbox::EngineGlobals.near_plane, NxXbox::EngineGlobals.far_plane );
+	D3DXMATRIX proj_mat;
+	D3DXMATRIXPerspectiveRH( &proj_mat, wnp, hnp, NxXbox::EngineGlobals.near_plane, NxXbox::EngineGlobals.far_plane );
 
 	// Set the calculated view and projection matrices.
 	D3DDevice_SetTransform( D3DTS_VIEW, &cam_mat );
@@ -465,9 +465,9 @@ bool CXboxImposterGroup::plat_update_imposter_polygon( void )
 		m_update_count = 0;
 
 		// Generate a camera matrix that will point the camera directly at the midpoint of the bounding box.
-		XGMATRIX	cam_mat;
-		XGVECTOR3	look_at( m_composite_bbox_mid[X], m_composite_bbox_mid[Y], m_composite_bbox_mid[Z] );
-		XGMatrixLookAtRH( &cam_mat, &NxXbox::EngineGlobals.cam_position, &look_at, &NxXbox::EngineGlobals.cam_up );
+		D3DXMATRIX	cam_mat;
+		D3DXVECTOR3	look_at( m_composite_bbox_mid[X], m_composite_bbox_mid[Y], m_composite_bbox_mid[Z] );
+		D3DXMATRIXLookAtRH( &cam_mat, &NxXbox::EngineGlobals.cam_position, &look_at, &NxXbox::EngineGlobals.cam_up );
 
 		// Using this camera matrix, project all eight corners of the bounding box, in order to determine the best size for the texture.
 		Mth::Vector proj_max_x, proj_max_y, proj_mid;
@@ -539,7 +539,7 @@ float CXboxImposterGroup::plat_check_distance( void )
 
 	for( uint32 v = 0; v < 8; ++v )
 	{
-		XGVECTOR3 test_in( ( v & 0x04 ) ? max_x : min_x, ( v & 0x02 ) ? max_y : min_y, ( v & 0x01 ) ? max_z : min_z );
+		D3DXVECTOR3 test_in( ( v & 0x04 ) ? max_x : min_x, ( v & 0x02 ) ? max_y : min_y, ( v & 0x01 ) ? max_z : min_z );
 		XGVECTOR4 test_mid;
 		
 		XGVec3Transform( &test_mid, &test_in, &NxXbox::EngineGlobals.view_matrix );
